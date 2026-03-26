@@ -1,856 +1,387 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Formulário de Briefing — Agência Command. Preencha com atenção para recebermos um diagnóstico preciso do seu projeto.">
-<title>Briefing de Projeto · Agência Command</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#0A0A0A;
-  --bg2:#111111;
-  --bg3:#171717;
-  --border:rgba(255,255,255,0.08);
-  --border-focus:rgba(58,123,255,0.6);
-  --white:#FFFFFF;
-  --gray:#8A8A8E;
-  --gray2:#3A3A3C;
-  --blue:#3A7BFF;
-  --blue-dim:rgba(58,123,255,0.15);
-  --gold:#C8A96E;
-  --gold-dim:rgba(200,169,110,0.12);
-  --green:#34D399;
-  --red:#F87171;
-  --font-d:'Syne',sans-serif;
-  --font-b:'DM Sans',sans-serif;
-  --ease:cubic-bezier(0.16,1,0.3,1);
-  --r:12px;
-  --r2:8px;
-}
-html{scroll-behavior:smooth;font-size:16px}
-body{background:var(--bg);color:var(--white);font-family:var(--font-b);-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh}
 
-/* PROGRESS BAR */
-.progress-bar-wrap{position:fixed;top:0;left:0;right:0;z-index:100;height:3px;background:rgba(255,255,255,0.06)}
-.progress-bar-fill{height:100%;background:linear-gradient(90deg,var(--blue),#7B5CFF);transition:width .5s var(--ease);width:0%}
+⌘ COMMAND
+Briefing de Projeto
 
-/* TOP NAV */
-.topnav{position:fixed;top:3px;left:0;right:0;z-index:99;background:rgba(10,10,10,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:14px 32px;display:flex;align-items:center;justify-content:space-between}
-.topnav-logo{font-family:var(--font-d);font-size:15px;font-weight:800;letter-spacing:.1em;color:var(--white);display:flex;align-items:center;gap:8px}
-.topnav-logo span{width:28px;height:28px;background:linear-gradient(135deg,var(--blue),#7B5CFF);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:14px}
-.step-counter{font-size:13px;color:var(--gray);font-weight:400}
-.step-counter strong{color:var(--white);font-weight:500}
+Briefing Estratégico
+Vamos entender seu projeto.
+Este formulário foi criado por especialistas em criação de sites e discovery de projetos digitais. Quanto mais detalhadas forem suas respostas, mais preciso será nosso diagnóstico — e melhor será o resultado final do seu site.
 
-/* LAYOUT */
-.form-wrap{max-width:760px;margin:0 auto;padding:112px 24px 80px}
+Diagnóstico preciso
 
-/* INTRO */
-.intro-section{text-align:center;margin-bottom:72px}
-.intro-badge{display:inline-flex;align-items:center;gap:8px;background:var(--blue-dim);border:1px solid rgba(58,123,255,0.25);border-radius:100px;padding:7px 16px;font-size:12px;font-weight:500;color:#6B9FFF;letter-spacing:.06em;margin-bottom:28px}
-.intro-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--blue);animation:blink 2s ease-in-out infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-h1.intro-titulo{font-family:var(--font-d);font-size:clamp(32px,6vw,54px);font-weight:800;line-height:1.05;letter-spacing:-.02em;margin-bottom:20px}
-h1.intro-titulo .ac{color:var(--blue)}
-.intro-desc{font-size:17px;color:var(--gray);line-height:1.75;max-width:580px;margin:0 auto 36px}
-.intro-pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:40px}
-.pill{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:100px;padding:8px 16px;font-size:13px;color:var(--gray)}
-.pill .dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
+Orçamento justo
 
-/* SECTION BLOCKS */
-.form-section{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:48px 44px;margin-bottom:24px;position:relative;overflow:hidden;transition:border-color .3s}
-.form-section:focus-within{border-color:rgba(58,123,255,0.3)}
-.form-section::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),transparent);opacity:0;transition:opacity .3s}
-.form-section:focus-within::before{opacity:1}
-.section-header{margin-bottom:36px}
-.section-num{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:10px;margin-bottom:12px}
-.section-num::after{content:'';flex:1;height:1px;background:rgba(58,123,255,0.2)}
-.section-title{font-family:var(--font-d);font-size:22px;font-weight:800;letter-spacing:-.01em;margin-bottom:8px}
-.section-desc{font-size:14px;color:var(--gray);line-height:1.6}
+Zero retrabalho
 
-/* FIELDS */
-.field-group{margin-bottom:28px}
-.field-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-label.field-label{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:500;color:rgba(255,255,255,0.85);margin-bottom:8px;letter-spacing:.01em}
-.req{color:var(--blue);font-size:11px;font-weight:600;letter-spacing:.06em}
-.opt{color:var(--gray);font-size:11px;letter-spacing:.04em}
-.field-hint{font-size:12px;color:var(--gray);margin-top:6px;line-height:1.5}
+Projeto com base sólida
+📋 Completo
+⚡ Versão Rápida
+💎 Premium
+★
+Campos marcados com
+OBRIGATÓRIO
+são essenciais para que possamos elaborar um diagnóstico e orçamento precisos.
+SEÇÃO 01
+Informações da Empresa
+Precisamos conhecer quem você é antes de criar qualquer estratégia.
+Nome da empresa
+OBRIGATÓRIO
+Nome do responsável
+OBRIGATÓRIO
+E-mail
+OBRIGATÓRIO
+WhatsApp / Telefone
+OBRIGATÓRIO
+Cidade e Estado
+OBRIGATÓRIO
+Segmento de atuação
+OBRIGATÓRIO
+            Selecione o segmento
+            Saúde e Bem-estar
+            Educação e Treinamento
+            Tecnologia e Software
+            Advocacia e Jurídico
+            Arquitetura e Engenharia
+            Contabilidade e Finanças
+            Consultoria e Gestão
+            Marketing e Comunicação
+            E-commerce / Varejo
+            Imóveis / Imobiliária
+            Gastronomia e Food
+            Beleza e Estética
+            Instituto / ONG / Social
+            Indústria e Serviços B2B
+            Moda e Lifestyle
+            Outro
+          
+Site atual
+OPCIONAL
+Se não tiver, deixe em branco.
+Redes sociais ativas
+OPCIONAL
+SEÇÃO 02
+Sobre o Negócio
+Entendemos o negócio antes do layout. Esta seção é uma das mais importantes.
+Quais são seus principais serviços ou produtos?
+OBRIGATÓRIO
+Qual é o diferencial competitivo da sua empresa?
+OBRIGATÓRIO
+Qual é o momento atual do negócio?
+OBRIGATÓRIO
 
-input[type=text],input[type=email],input[type=tel],input[type=url],textarea,select{
-  width:100%;background:var(--bg3);
-  border:1.5px solid var(--border);border-radius:var(--r2);
-  padding:13px 16px;font-family:var(--font-b);font-size:15px;color:var(--white);
-  outline:none;transition:border-color .2s,box-shadow .2s,background .2s;
-  appearance:none;-webkit-appearance:none;
-}
-input[type=text]:focus,input[type=email]:focus,input[type=tel]:focus,input[type=url]:focus,textarea:focus,select:focus{
-  border-color:var(--blue);box-shadow:0 0 0 3px rgba(58,123,255,0.12);background:rgba(58,123,255,0.04);
-}
-input::placeholder,textarea::placeholder{color:var(--gray2)}
-textarea{resize:vertical;min-height:110px;line-height:1.6}
-select{background-image:url("data:image/svg+xml,%3Csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%238A8A8E' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px;cursor:pointer}
-select option{background:#1C1C1E;color:var(--white)}
+Lançando a empresa
+Negócio novo ou em fase inicial de estruturação
 
-/* CHECKBOXES */
-.check-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
-.check-grid.cols2{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
-.check-item{position:relative}
-.check-item input[type=checkbox]{position:absolute;opacity:0;width:0;height:0}
-.check-item label{display:flex;align-items:center;gap:12px;background:var(--bg3);border:1.5px solid var(--border);border-radius:var(--r2);padding:12px 14px;cursor:pointer;font-size:14px;color:rgba(255,255,255,.75);transition:all .2s;user-select:none}
-.check-item input:checked+label{background:var(--blue-dim);border-color:rgba(58,123,255,0.5);color:var(--white)}
-.check-item label:hover{border-color:var(--border-focus);color:var(--white)}
-.check-box{width:18px;height:18px;border:1.5px solid var(--gray2);border-radius:5px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s}
-.check-item input:checked+label .check-box{background:var(--blue);border-color:var(--blue)}
-.check-box::after{content:'✓';font-size:11px;color:white;opacity:0;transition:opacity .15s}
-.check-item input:checked+label .check-box::after{opacity:1}
+Consolidando o mercado
+Empresa ativa, buscando crescimento e profissionalização
 
-/* RADIO */
-.radio-group{display:flex;flex-direction:column;gap:10px}
-.radio-item{position:relative}
-.radio-item input[type=radio]{position:absolute;opacity:0;width:0;height:0}
-.radio-item label{display:flex;align-items:flex-start;gap:12px;background:var(--bg3);border:1.5px solid var(--border);border-radius:var(--r2);padding:14px 16px;cursor:pointer;font-size:14px;color:rgba(255,255,255,.75);transition:all .2s;user-select:none;line-height:1.5}
-.radio-item input:checked+label{background:var(--blue-dim);border-color:rgba(58,123,255,0.5);color:var(--white)}
-.radio-item label:hover{border-color:var(--border-focus);color:var(--white)}
-.radio-dot{width:18px;height:18px;border:1.5px solid var(--gray2);border-radius:50%;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:all .2s}
-.radio-item input:checked+label .radio-dot{border-color:var(--blue)}
-.radio-dot::after{content:'';width:8px;height:8px;border-radius:50%;background:var(--blue);opacity:0;transition:opacity .15s}
-.radio-item input:checked+label .radio-dot::after{opacity:1}
-.radio-item label .radio-label-txt strong{display:block;font-weight:500;margin-bottom:2px}
-.radio-item label .radio-label-txt span{font-size:12.5px;color:var(--gray);line-height:1.4}
+Escalando operações
+Negócio em expansão, precisando de mais estrutura digital
 
-/* RANGE SLIDER */
-.range-wrap{display:flex;flex-direction:column;gap:10px}
-.range-labels{display:flex;justify-content:space-between;font-size:12px;color:var(--gray)}
-input[type=range]{width:100%;height:4px;background:var(--bg3);border:none;border-radius:2px;outline:none;-webkit-appearance:none;cursor:pointer}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--blue);cursor:pointer;box-shadow:0 0 10px rgba(58,123,255,0.4)}
-.range-val{font-size:14px;font-weight:500;color:var(--blue);text-align:center}
+Reposicionando a marca
+Mudança de público, oferta ou identidade de negócio
+Qual é o maior desafio do negócio hoje?
+OBRIGATÓRIO
+Quais são seus principais concorrentes?
+OPCIONAL
+SEÇÃO 03
+Objetivos do Site
+Entendemos a conversão antes da estética. Cada decisão de design segue um objetivo claro.
+Qual é o objetivo principal do novo site?
+OBRIGATÓRIO
 
-/* DIVIDER */
-.divider{height:1px;background:var(--border);margin:32px 0}
+Gerar leads e oportunidades de vendas
+Captar contatos, consultas, orçamentos e agendamentos
 
-/* BADGE OBRIG */
-.required-note{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--gray);margin-bottom:48px;padding:12px 16px;background:rgba(58,123,255,0.06);border:1px solid rgba(58,123,255,0.15);border-radius:var(--r2)}
+Construir credibilidade e autoridade
+Fortalecer a imagem, demonstrar profissionalismo e expertise
 
-/* VERSÃO TABS */
-.version-tabs{display:flex;gap:2px;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:4px;margin-bottom:40px}
-.vtab{flex:1;padding:11px 16px;border:none;background:none;border-radius:9px;font-family:var(--font-b);font-size:13.5px;font-weight:500;color:var(--gray);cursor:pointer;transition:all .2s;text-align:center}
-.vtab.active{background:var(--blue);color:#fff;box-shadow:0 2px 12px rgba(58,123,255,0.3)}
+Vender produtos online (e-commerce)
+Loja virtual com catálogo, carrinho e pagamento integrado
 
-/* FORM VERSIONS */
-.form-version{display:none}
-.form-version.active{display:block}
+Apresentação institucional
+Site de presença, para parceiros, investidores e colaboradores
 
-/* SUBMIT */
-.submit-area{text-align:center;padding:48px 0 0}
-.btn-submit{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--blue) 0%,#5B4FFF 100%);color:#fff;border:none;border-radius:100px;padding:17px 44px;font-family:var(--font-b);font-size:16px;font-weight:500;cursor:pointer;transition:all .3s var(--ease);letter-spacing:.02em}
-.btn-submit:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(58,123,255,.4)}
-.btn-submit:active{transform:translateY(0)}
-.submit-note{font-size:13px;color:var(--gray);margin-top:16px}
+Mostrar portfólio e trabalhos
+Site vitrine para showcasing de projetos e cases
 
-/* QUALIF BADGE */
-.qualif-block{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:36px;margin-bottom:24px}
-.qualif-block h3{font-family:var(--font-d);font-size:18px;font-weight:800;margin-bottom:20px;display:flex;align-items:center;gap:10px}
-.qualif-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--border)}
-.qualif-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
-.qualif-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:5px}
-.qualif-dot.gold{background:var(--gold)}
-.qualif-dot.blue{background:var(--blue)}
-.qualif-dot.green{background:var(--green)}
-.qualif-item p{font-size:14px;color:rgba(255,255,255,.8);line-height:1.6}
-.qualif-item strong{display:block;font-size:13px;color:var(--gray);margin-bottom:3px;font-weight:400;letter-spacing:.03em}
+Outro objetivo
+Descreverei no campo abaixo
+Qual é a ação principal que o visitante deve realizar no site?
+OBRIGATÓRIO
+Esta é a sua principal métrica de conversão. Seja específico.
+Como está sua presença digital hoje?
+OPCIONAL
+SEÇÃO 04
+Público-alvo
+Entendemos a jornada antes da interface. Quem vai usar este site define tudo.
+Descreva seu público-alvo ideal
+OBRIGATÓRIO
+Seu cliente é principalmente:
+OBRIGATÓRIO
 
-/* SUCCESS */
-.success-screen{display:none;text-align:center;padding:80px 24px}
-.success-icon{width:72px;height:72px;background:rgba(52,211,153,0.15);border:1px solid rgba(52,211,153,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 28px}
-.success-screen h2{font-family:var(--font-d);font-size:32px;font-weight:800;margin-bottom:14px}
-.success-screen p{font-size:17px;color:var(--gray);max-width:480px;margin:0 auto 32px;line-height:1.7}
+Pessoa física (B2C)
 
-/* MOBILE */
-@media(max-width:640px){
-  .form-section{padding:32px 24px}
-  .field-row{grid-template-columns:1fr}
-  .topnav{padding:12px 18px}
-  .check-grid{grid-template-columns:1fr}
-}
-</style>
-</head>
-<body>
+Empresa (B2B)
 
-<!-- ╔══════════════════════════════════════════════════════╗
-     ║  INSTRUÇÃO — LEIA ANTES DE PUBLICAR                 ║
-     ║  1. Acesse formspree.io e crie uma conta gratuita   ║
-     ║  2. Crie um novo formulário chamado "Briefing"       ║
-     ║  3. Copie seu código (ex: xxxxxxxq)                  ║
-     ║  4. Substitua mlgoevob pelo código       ║
-     ║     em TODAS as 3 ocorrências neste arquivo          ║
-     ║  5. Salve e publique — as respostas chegam por email ║
-     ╚══════════════════════════════════════════════════════╝ -->
+Ambos
+Ticket médio por cliente:
+OPCIONAL
 
-<div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar"></div></div>
+Até R$ 500
 
-<div class="topnav">
-  <div class="topnav-logo"><span>⌘</span> COMMAND</div>
-  <div class="step-counter">Briefing de Projeto <strong id="stepInfo"></strong></div>
-</div>
+R$ 500 a R$ 2.000
 
-<div class="form-wrap">
+R$ 2.000 a R$ 10.000
 
-  <!-- INTRO -->
-  <div class="intro-section">
-    <div class="intro-badge"><span class="intro-badge-dot"></span> Briefing Estratégico</div>
-    <h1 class="intro-titulo">Vamos <span class="ac">entender</span><br>seu projeto.</h1>
-    <p class="intro-desc">
-      Este formulário foi criado por especialistas em criação de sites e discovery de projetos digitais. Quanto mais detalhadas forem suas respostas, mais preciso será nosso diagnóstico — e melhor será o resultado final do seu site.
-    </p>
-    <div class="intro-pills">
-      <span class="pill"><span class="dot"></span> Diagnóstico preciso</span>
-      <span class="pill"><span class="dot"></span> Orçamento justo</span>
-      <span class="pill"><span class="dot"></span> Zero retrabalho</span>
-      <span class="pill"><span class="dot"></span> Projeto com base sólida</span>
-    </div>
-  </div>
+Acima de R$ 10.000
+SEÇÃO 05
+Estrutura e Páginas Desejadas
+Entendemos a escalabilidade antes da implementação. Marque tudo que deseja no seu site.
+Quais páginas você deseja?
+OBRIGATÓRIO
+Marque todas que se aplicam ao seu projeto.
 
-  <!-- VERSION TABS -->
-  <div class="version-tabs" role="tablist" aria-label="Versão do formulário">
-    <button class="vtab active" onclick="setVersion('completo')" role="tab" aria-selected="true" aria-controls="v-completo">📋 Completo</button>
-    <button class="vtab" onclick="setVersion('curto')" role="tab" aria-selected="false" aria-controls="v-curto">⚡ Versão Rápida</button>
-    <button class="vtab" onclick="setVersion('premium')" role="tab" aria-selected="false" aria-controls="v-premium">💎 Premium</button>
-  </div>
+🏠 Home / Página inicial
 
-  <div class="required-note" role="note">
-    <span style="color:var(--blue);font-weight:600">★</span>
-    Campos marcados com <strong style="color:var(--blue);margin:0 4px">OBRIGATÓRIO</strong> são essenciais para que possamos elaborar um diagnóstico e orçamento precisos.
-  </div>
+👤 Sobre / Quem somos
 
-  <!-- ════ VERSÃO COMPLETA ════ -->
-  <div id="v-completo" class="form-version active" role="tabpanel">
-  <form id="form-completo" action="https://formspree.io/f/mlgoevob" method="POST" novalidate>
+💼 Serviços / Soluções
 
-    <!-- S1 -->
-    <div class="form-section">
-      <div class="section-header">
-        <div class="section-num">Seção 01</div>
-        <h2 class="section-title">Informações da Empresa</h2>
-        <p class="section-desc">Precisamos conhecer quem você é antes de criar qualquer estratégia.</p>
-      </div>
-      <div class="field-row">
-        <div class="field-group">
-          <label class="field-label" for="c_nome_empresa">Nome da empresa <span class="req">OBRIGATÓRIO</span></label>
-          <input type="text" id="c_nome_empresa" name="nome_empresa" placeholder="Razão social ou nome fantasia" required>
-        </div>
-        <div class="field-group">
-          <label class="field-label" for="c_responsavel">Nome do responsável <span class="req">OBRIGATÓRIO</span></label>
-          <input type="text" id="c_responsavel" name="responsavel" placeholder="Seu nome completo" required>
-        </div>
-      </div>
-      <div class="field-row">
-        <div class="field-group">
-          <label class="field-label" for="c_email">E-mail <span class="req">OBRIGATÓRIO</span></label>
-          <input type="email" id="c_email" name="email" placeholder="seu@email.com" required>
-        </div>
-        <div class="field-group">
-          <label class="field-label" for="c_telefone">WhatsApp / Telefone <span class="req">OBRIGATÓRIO</span></label>
-          <input type="tel" id="c_telefone" name="telefone" placeholder="(00) 00000-0000" required>
-        </div>
-      </div>
-      <div class="field-row">
-        <div class="field-group">
-          <label class="field-label" for="c_cidade">Cidade e Estado <span class="req">OBRIGATÓRIO</span></label>
-          <input type="text" id="c_cidade" name="cidade" placeholder="Ex: São Paulo — SP" required>
-        </div>
-        <div class="field-group">
-          <label class="field-label" for="c_segmento">Segmento de atuação <span class="req">OBRIGATÓRIO</span></label>
-          <select id="c_segmento" name="segmento" required>
-            <option value="">Selecione o segmento</option>
-            <option>Saúde e Bem-estar</option>
-            <option>Educação e Treinamento</option>
-            <option>Tecnologia e Software</option>
-            <option>Advocacia e Jurídico</option>
-            <option>Arquitetura e Engenharia</option>
-            <option>Contabilidade e Finanças</option>
-            <option>Consultoria e Gestão</option>
-            <option>Marketing e Comunicação</option>
-            <option>E-commerce / Varejo</option>
-            <option>Imóveis / Imobiliária</option>
-            <option>Gastronomia e Food</option>
-            <option>Beleza e Estética</option>
-            <option>Instituto / ONG / Social</option>
-            <option>Indústria e Serviços B2B</option>
-            <option>Moda e Lifestyle</option>
-            <option>Outro</option>
-          </select>
-        </div>
-      </div>
-      <div class="field-row">
-        <div class="field-group">
-          <label class="field-label" for="c_site_atual">Site atual <span class="opt">OPCIONAL</span></label>
-          <input type="url" id="c_site_atual" name="site_atual" placeholder="https://www.seusite.com.br">
-          <p class="field-hint">Se não tiver, deixe em branco.</p>
-        </div>
-        <div class="field-group">
-          <label class="field-label" for="c_redes">Redes sociais ativas <span class="opt">OPCIONAL</span></label>
-          <input type="text" id="c_redes" name="redes" placeholder="@instagram, /facebook, /linkedin…">
-        </div>
-      </div>
-    </div>
+🖼️ Portfólio / Cases
 
-    <!-- S2 -->
-    <div class="form-section">
-      <div class="section-header">
-        <div class="section-num">Seção 02</div>
-        <h2 class="section-title">Sobre o Negócio</h2>
-        <p class="section-desc">Entendemos o negócio antes do layout. Esta seção é uma das mais importantes.</p>
-      </div>
-      <div class="field-group">
-        <label class="field-label" for="c_servicos">Quais são seus principais serviços ou produtos? <span class="req">OBRIGATÓRIO</span></label>
-        <textarea id="c_servicos" name="servicos" placeholder="Descreva o que você oferece, como funciona e qual o valor entregue ao cliente…" required></textarea>
-      </div>
-      <div class="field-group">
-        <label class="field-label" for="c_diferenciais">Qual é o diferencial competitivo da sua empresa? <span class="req">OBRIGATÓRIO</span></label>
-        <textarea id="c_diferenciais" name="diferenciais" placeholder="O que faz você ser a melhor escolha? Por que um cliente escolheria você e não o concorrente?"></textarea>
-      </div>
-      <div class="field-group">
-        <label class="field-label">Qual é o momento atual do negócio? <span class="req">OBRIGATÓRIO</span></label>
-        <div class="radio-group">
-          <div class="radio-item"><input type="radio" name="momento" id="m1" value="lancando"><label for="m1"><span class="radio-dot"></span><span class="radio-label-txt"><strong>Lançando a empresa</strong><span>Negócio novo ou em fase inicial de estruturação</span></span></label></div>
-          <div class="radio-item"><input type="radio" name="momento" id="m2" value="consolidando"><label for="m2"><span class="radio-dot"></span><span class="radio-label-txt"><strong>Consolidando o mercado</strong><span>Empresa ativa, buscando crescimento e profissionalização</span></span></label></div>
-          <div class="radio-item"><input type="radio" name="momento" id="m3" value="escalando"><label for="m3"><span class="radio-dot"></span><span class="radio-label-txt"><strong>Escalando operações</strong><span>Negócio em expansão, precisando de mais estrutura digital</span></span></label></div>
-          <div class="radio-item"><input type="radio" name="momento" id="m4" value="reposicionando"><label for="m4"><span class="radio-dot"></span><span class="radio-label-txt"><strong>Reposicionando a marca</strong><span>Mudança de público, oferta ou identidade de negócio</span></span></label></div>
-        </div>
-      </div>
-      <div class="field-group">
-        <label class="field-label" for="c_desafio">Qual é o maior desafio do negócio hoje? <span class="req">OBRIGATÓRIO</span></label>
-        <textarea id="c_desafio" name="desafio" placeholder="Fale com liberdade. Isso nos ajuda a criar um site estratégico e não apenas bonito." required></textarea>
-      </div>
-      <div class="field-group">
-        <label class="field-label" for="c_concorrentes">Quais são seus principais concorrentes? <span class="opt">OPCIONAL</span></label>
-        <textarea id="c_concorrentes" name="concorrentes" placeholder="Nome e/ou site dos concorrentes diretos. Nos ajuda a entender o mercado e criar diferenciação visual e estratégica."></textarea>
-      </div>
-    </div>
+👥 Equipe / Time
 
-    <!-- S3 -->
-    <div class="form-section">
-      <div class="section-header">
-        <div class="section-num">Seção 03</div>
-        <h2 class="section-title">Objetivos do Site</h2>
-        <p class="section-desc">Entendemos a conversão antes da estética. Cada decisão de design segue um objetivo claro.</p>
-      </div>
-      <div class="field-group">
-        <label class="field-label">Qual é o objetivo principal do novo site? <span class="req">OBRIGATÓRIO</span></label>
-        <div class="radio-group">
-          <div class="radio-item"><input type="radio" name="objetivo" id="o1" value="gerar_leads"><label for="o1"><span class="radio-dot"></span><span class="radio-label-txt"><strong>Gerar leads e oportunidades de vendas</strong><span>Captar contatos, consultas, orçamentos e agendamentos</span></span></label></div>
-          <div class="radio-item"><input type="radio" name="objetivo" id="o2" value="credibilidade"><label for="o2"><span class="radio-dot"></span><span class="radio-label-txt"><strong>Construir credibilidade e autoridade</strong><span>Fortalecer a imagem, demonstrar profissionalismo e expertise</span></span></label></div>
-          <div class="radio-item"><input type="radio" name="objetivo" id="o3" value="vender"><label for="o3"><span class="radio-dot"></span><span class="radio-label-txt"><strong>Vender produtos online (e-commerce)</strong><span>Loja virtual com catálogo, carrinho e pagamento integrado</span></span></label></div>
-          <div class="radio-item"><input type="radio" name="objetivo" id="o4" value="institucional"><label for="o4"><span class="radio-dot"></span><span class="radio-label-txt"><strong>Apresentação institucional</strong><span>Site de presença, para parceiros, investidores e colaboradores</span></span></label></div>
-          <div class="radio-item"><input type="radio" name="objetivo" id="o5" value="portfolio"><label for="o5"><span class="radio-dot"></span><span class="radio-label-txt"><strong>Mostrar portfólio e trabalhos</strong><span>Site vitrine para showcasing de projetos e cases</span></span></label></div>
-          <div class="radio-item"><input type="radio" name="objetivo" id="o6" value="outro"><label for="o6"><span class="radio-dot"></span><span class="radio-label-txt"><strong>Outro objetivo</strong><span>Descreverei no campo abaixo</span></span></label></div>
-        </div>
-      </div>
-      <div class="field-group">
-        <label class="field-label" for="c_acao_principal">Qual é a ação principal que o visitante deve realizar no site? <span class="req">OBRIGATÓRIO</span></label>
-        <input type="text" id="c_acao_principal" name="acao_principal" placeholder="Ex: Enviar formulário de contato / Chamar no WhatsApp / Comprar / Agendar consulta" required>
-        <p class="field-hint">Esta é a sua principal métrica de conversão. Seja específico.</p>
-      </div>
-      <div class="field-group">
-        <label class="field-label" for="c_presenca">Como está sua presença digital hoje? <span class="opt">OPCIONAL</span></label>
-        <textarea id="c_presenca" name="presenca" placeholder="Tem Instagram com bom engajamento? Google Meu Negócio? Anúncios rodando? Tráfego orgânico? Conte-nos o que já existe."></textarea>
-      </div>
-    </div>
+📝 Blog / Conteúdo
 
-    <!-- S4 -->
-    <div class="form-section">
-      <div class="section-header">
-        <div class="section-num">Seção 04</div>
-        <h2 class="section-title">Público-alvo</h2>
-        <p class="section-desc">Entendemos a jornada antes da interface. Quem vai usar este site define tudo.</p>
-      </div>
-      <div class="field-group">
-        <label class="field-label" for="c_publico">Descreva seu público-alvo ideal <span class="req">OBRIGATÓRIO</span></label>
-        <textarea id="c_publico" name="publico" placeholder="Idade, gênero, profissão, renda, comportamento, dores, desejos. Ex: Mulheres de 30 a 50 anos, classe AB, que buscam serviços premium de saúde preventiva…" required></textarea>
-      </div>
-      <div class="field-row">
-        <div class="field-group">
-          <label class="field-label">Seu cliente é principalmente: <span class="req">OBRIGATÓRIO</span></label>
-          <div class="radio-group">
-            <div class="radio-item"><input type="radio" name="tipocliente" id="tc1" value="b2c"><label for="tc1"><span class="radio-dot"></span><span class="radio-label-txt"><strong>Pessoa física (B2C)</strong></span></label></div>
-            <div class="radio-item"><input type="radio" name="tipocliente" id="tc2" value="b2b"><label for="tc2"><span class="radio-dot"></span><span class="radio-label-txt"><strong>Empresa (B2B)</strong></span></label></div>
-            <div class="radio-item"><input type="radio" name="tipocliente" id="tc3" value="ambos"><label for="tc3"><span class="radio-dot"></span><span class="radio-label-txt"><strong>Ambos</strong></span></label></div>
-          </div>
-        </div>
-        <div class="field-group">
-          <label class="field-label">Ticket médio por cliente: <span class="opt">OPCIONAL</span></label>
-          <div class="radio-group">
-            <div class="radio-item"><input type="radio" name="ticket" id="tk1" value="ate500"><label for="tk1"><span class="radio-dot"></span>Até R$ 500</label></div>
-            <div class="radio-item"><input type="radio" name="ticket" id="tk2" value="500a2k"><label for="tk2"><span class="radio-dot"></span>R$ 500 a R$ 2.000</label></div>
-            <div class="radio-item"><input type="radio" name="ticket" id="tk3" value="2ka10k"><label for="tk3"><span class="radio-dot"></span>R$ 2.000 a R$ 10.000</label></div>
-            <div class="radio-item"><input type="radio" name="ticket" id="tk4" value="acima10k"><label for="tk4"><span class="radio-dot"></span>Acima de R$ 10.000</label></div>
-          </div>
-        </div>
-      </div>
-    </div>
+💰 Planos / Preços
 
-    <!-- S5 -->
-    <div class="form-section">
-      <div class="section-header">
-        <div class="section-num">Seção 05</div>
-        <h2 class="section-title">Estrutura e Páginas Desejadas</h2>
-        <p class="section-desc">Entendemos a escalabilidade antes da implementação. Marque tudo que deseja no seu site.</p>
-      </div>
-      <div class="field-group">
-        <label class="field-label">Quais páginas você deseja? <span class="req">OBRIGATÓRIO</span></label>
-        <p class="field-hint" style="margin-bottom:12px">Marque todas que se aplicam ao seu projeto.</p>
-        <div class="check-grid">
-          <div class="check-item"><input type="checkbox" id="p_home" name="paginas[]" value="home"><label for="p_home"><span class="check-box"></span>🏠 Home / Página inicial</label></div>
-          <div class="check-item"><input type="checkbox" id="p_sobre" name="paginas[]" value="sobre"><label for="p_sobre"><span class="check-box"></span>👤 Sobre / Quem somos</label></div>
-          <div class="check-item"><input type="checkbox" id="p_servicos" name="paginas[]" value="servicos"><label for="p_servicos"><span class="check-box"></span>💼 Serviços / Soluções</label></div>
-          <div class="check-item"><input type="checkbox" id="p_portfolio" name="paginas[]" value="portfolio"><label for="p_portfolio"><span class="check-box"></span>🖼️ Portfólio / Cases</label></div>
-          <div class="check-item"><input type="checkbox" id="p_equipe" name="paginas[]" value="equipe"><label for="p_equipe"><span class="check-box"></span>👥 Equipe / Time</label></div>
-          <div class="check-item"><input type="checkbox" id="p_blog" name="paginas[]" value="blog"><label for="p_blog"><span class="check-box"></span>📝 Blog / Conteúdo</label></div>
-          <div class="check-item"><input type="checkbox" id="p_precos" name="paginas[]" value="precos"><label for="p_precos"><span class="check-box"></span>💰 Planos / Preços</label></div>
-          <div class="check-item"><input type="checkbox" id="p_faq" name="paginas[]" value="faq"><label for="p_faq"><span class="check-box"></span>❓ FAQ / Perguntas frequentes</label></div>
-          <div class="check-item"><input type="checkbox" id="p_depoimentos" name="paginas[]" value="depoimentos"><label for="p_depoimentos"><span class="check-box"></span>⭐ Depoimentos / Reviews</label></div>
-          <div class="check-item"><input type="checkbox" id="p_contato" name="paginas[]" value="contato"><label for="p_contato"><span class="check-box"></span>📞 Contato</label></div>
-          <div class="check-item"><input type="checkbox" id="p_loja" name="paginas[]" value="loja"><label for="p_loja"><span class="check-box"></span>🛒 Loja / E-commerce</label></div>
-          <div class="check-item"><input type="checkbox" id="p_area_cliente" name="paginas[]" value="area_cliente"><label for="p_area_cliente"><span class="check-box"></span>🔒 Área do cliente</label></div>
-          <div class="check-item"><input type="checkbox" id="p_politica" name="paginas[]" value="politica"><label for="p_politica"><span class="check-box"></span>📄 Política de privacidade</label></div>
-          <div class="check-item"><input type="checkbox" id="p_landing" name="paginas[]" value="landing"><label for="p_landing"><span class="check-box"></span>🎯 Landing page específica</label></div>
-        </div>
-      </div>
-      <div class="field-group">
-        <label class="field-label" for="c_outras_paginas">Outras páginas não listadas acima <span class="opt">OPCIONAL</span></label>
-        <input type="text" id="c_outras_paginas" name="outras_paginas" placeholder="Descreva páginas adicionais que não estão na lista…">
-      </div>
-    </div>
+❓ FAQ / Perguntas frequentes
 
-    <!-- S6 -->
-    <div class="form-section">
-      <div class="section-header">
-        <div class="section-num">Seção 06</div>
-        <h2 class="section-title">Referências e Estilo Visual</h2>
-        <p class="section-desc">Entendemos o valor percebido antes da entrega. Estética é estratégia.</p>
-      </div>
-      <div class="field-group">
-        <label class="field-label" for="c_referencias">Sites de referência que você gosta <span class="req">OBRIGATÓRIO</span></label>
-        <textarea id="c_referencias" name="referencias" placeholder="Cole aqui os links de sites que admira. Não precisa ser do seu segmento — pode ser qualquer site cujo design, sensação ou comunicação você considera referência." required></textarea>
-      </div>
-      <div class="field-group">
-        <label class="field-label">Estilo visual desejado <span class="req">OBRIGATÓRIO</span></label>
-        <p class="field-hint" style="margin-bottom:12px">Marque todos os estilos que ressoam com sua marca.</p>
-        <div class="check-grid">
-          <div class="check-item"><input type="checkbox" id="ev_minimalista" name="estilos[]" value="minimalista"><label for="ev_minimalista"><span class="check-box"></span>🤍 Minimalista / Clean</label></div>
-          <div class="check-item"><input type="checkbox" id="ev_moderno" name="estilos[]" value="moderno"><label for="ev_moderno"><span class="check-box"></span>⚡ Moderno / Tecnológico</label></div>
-          <div class="check-item"><input type="checkbox" id="ev_luxo" name="estilos[]" value="luxo"><label for="ev_luxo"><span class="check-box"></span>✨ Premium / Luxo</label></div>
-          <div class="check-item"><input type="checkbox" id="ev_humano" name="estilos[]" value="humano"><label for="ev_humano"><span class="check-box"></span>🤝 Humano / Acolhedor</label></div>
-          <div class="check-item"><input type="checkbox" id="ev_corporativo" name="estilos[]" value="corporativo"><label for="ev_corporativo"><span class="check-box"></span>👔 Institucional / Sério</label></div>
-          <div class="check-item"><input type="checkbox" id="ev_criativo" name="estilos[]" value="criativo"><label for="ev_criativo"><span class="check-box"></span>🎨 Criativo / Expressivo</label></div>
-          <div class="check-item"><input type="checkbox" id="ev_dark" name="estilos[]" value="dark"><label for="ev_dark"><span class="check-box"></span>🌑 Dark mode / Escuro</label></div>
-          <div class="check-item"><input type="checkbox" id="ev_claro" name="estilos[]" value="claro"><label for="ev_claro"><span class="check-box"></span>☀️ Claro / Light mode</label></div>
-          <div class="check-item"><input type="checkbox" id="ev_colorido" name="estilos[]" value="colorido"><label for="ev_colorido"><span class="check-box"></span>🌈 Colorido / Vibrante</label></div>
-          <div class="check-item"><input type="checkbox" id="ev_editorial" name="estilos[]" value="editorial"><label for="ev_editorial"><span class="check-box"></span>📰 Editorial / Magazine</label></div>
-        </div>
-      </div>
-      <div class="field-group">
-        <label class="field-label" for="c_estilo_nao">Estilos ou referências que você NÃO quer <span class="opt">OPCIONAL</span></label>
-        <textarea id="c_estilo_nao" name="estilo_nao" placeholder="Tão importante quanto saber o que quer é saber o que não quer. Cite estilos, cores ou sites que definitivamente não combinam com sua marca."></textarea>
-      </div>
-      <div class="field-group">
-        <label class="field-label" for="c_cores">Cores desejadas ou referências de paleta <span class="opt">OPCIONAL</span></label>
-        <input type="text" id="c_cores" name="cores" placeholder="Ex: Azul navy + dourado. Ou: tons neutros e sofisticados. Ou: minhas cores já são #1A4F8A e #C8A96E">
-      </div>
-      <div class="field-row">
-        <div class="field-group">
-          <label class="field-label">Já existe identidade visual / brand? <span class="req">OBRIGATÓRIO</span></label>
-          <div class="radio-group">
-            <div class="radio-item"><input type="radio" name="tem_brand" id="tb1" value="sim_completo"><label for="tb1"><span class="radio-dot"></span>Sim, brand manual completo</label></div>
-            <div class="radio-item"><input type="radio" name="tem_brand" id="tb2" value="sim_parcial"><label for="tb2"><span class="radio-dot"></span>Sim, mas é parcial / informal</label></div>
-            <div class="radio-item"><input type="radio" name="tem_brand" id="tb3" value="logo_apenas"><label for="tb3"><span class="radio-dot"></span>Só tenho a logo</label></div>
-            <div class="radio-item"><input type="radio" name="tem_brand" id="tb4" value="nao"><label for="tb4"><span class="radio-dot"></span>Não, vou precisar criar</label></div>
-          </div>
-        </div>
-        <div class="field-group">
-          <label class="field-label">Já existe logotipo? <span class="req">OBRIGATÓRIO</span></label>
-          <div class="radio-group">
-            <div class="radio-item"><input type="radio" name="tem_logo" id="tl1" value="sim_vetorizado"><label for="tl1"><span class="radio-dot"></span>Sim, em formato vetorial (AI, EPS, SVG)</label></div>
-            <div class="radio-item"><input type="radio" name="tem_logo" id="tl2" value="sim_png"><label for="tl2"><span class="radio-dot"></span>Sim, só em PNG/JPG</label></div>
-            <div class="radio-item"><input type="radio" name="tem_logo" id="tl3" value="nao"><label for="tl3"><span class="radio-dot"></span>Não, precisarei criar</label></div>
-          </div>
-        </div>
-      </div>
-    </div>
+⭐ Depoimentos / Reviews
 
-    <!-- S7 -->
-    <div class="form-section">
-      <div class="section-header">
-        <div class="section-num">Seção 07</div>
-        <h2 class="section-title">Conteúdo e Materiais</h2>
-        <p class="section-desc">Saber o que você já tem nos ajuda a planejar o escopo com precisão.</p>
-      </div>
-      <div class="field-group">
-        <label class="field-label">Quais materiais você já possui? <span class="req">OBRIGATÓRIO</span></label>
-        <div class="check-grid cols2">
-          <div class="check-item"><input type="checkbox" id="mat1" name="materiais[]" value="textos"><label for="mat1"><span class="check-box"></span>📝 Textos das páginas prontos</label></div>
-          <div class="check-item"><input type="checkbox" id="mat2" name="materiais[]" value="fotos_proprias"><label for="mat2"><span class="check-box"></span>📷 Fotos próprias / profissionais</label></div>
-          <div class="check-item"><input type="checkbox" id="mat3" name="materiais[]" value="videos"><label for="mat3"><span class="check-box"></span>🎬 Vídeos institucionais</label></div>
-          <div class="check-item"><input type="checkbox" id="mat4" name="materiais[]" value="depoimentos"><label for="mat4"><span class="check-box"></span>⭐ Depoimentos de clientes</label></div>
-          <div class="check-item"><input type="checkbox" id="mat5" name="materiais[]" value="logo_vetor"><label for="mat5"><span class="check-box"></span>🎨 Logo em vetor</label></div>
-          <div class="check-item"><input type="checkbox" id="mat6" name="materiais[]" value="brand_manual"><label for="mat6"><span class="check-box"></span>📐 Manual de identidade visual</label></div>
-          <div class="check-item"><input type="checkbox" id="mat7" name="materiais[]" value="dominio"><label for="mat7"><span class="check-box"></span>🌐 Domínio registrado</label></div>
-          <div class="check-item"><input type="checkbox" id="mat8" name="materiais[]" value="hospedagem"><label for="mat8"><span class="check-box"></span>🖥️ Hospedagem contratada</label></div>
-        </div>
-      </div>
-      <div class="field-group">
-        <label class="field-label" for="c_dominio_atual">Qual é o domínio desejado ou atual? <span class="opt">OPCIONAL</span></label>
-        <input type="text" id="c_dominio_atual" name="dominio" placeholder="Ex: www.minhaempresa.com.br — já tenho registrado / ainda vou registrar">
-      </div>
-      <div class="field-group">
-        <label class="field-label" for="c_obs_conteudo">Observações sobre conteúdo <span class="opt">OPCIONAL</span></label>
-        <textarea id="c_obs_conteudo" name="obs_conteudo" placeholder="Precisará de ajuda para criar textos? Precisará de fotografia profissional? Quer copywriting estratégico? Conte-nos o que precisará além do desenvolvimento."></textarea>
-      </div>
-    </div>
+📞 Contato
 
-    <!-- S8 -->
-    <div class="form-section">
-      <div class="section-header">
-        <div class="section-num">Seção 08</div>
-        <h2 class="section-title">Funcionalidades e Integrações</h2>
-        <p class="section-desc">Cada funcionalidade tem impacto no escopo, prazo e investimento. Marque tudo que precisa.</p>
-      </div>
-      <div class="field-group">
-        <label class="field-label">Quais funcionalidades você precisa? <span class="req">OBRIGATÓRIO</span></label>
-        <div class="check-grid cols2">
-          <div class="check-item"><input type="checkbox" id="f1" name="funcs[]" value="formulario_contato"><label for="f1"><span class="check-box"></span>📩 Formulário de contato</label></div>
-          <div class="check-item"><input type="checkbox" id="f2" name="funcs[]" value="whatsapp"><label for="f2"><span class="check-box"></span>💬 Botão / Chat WhatsApp</label></div>
-          <div class="check-item"><input type="checkbox" id="f3" name="funcs[]" value="captacao_leads"><label for="f3"><span class="check-box"></span>🎯 Captação de leads / opt-in</label></div>
-          <div class="check-item"><input type="checkbox" id="f4" name="funcs[]" value="blog_cms"><label for="f4"><span class="check-box"></span>📝 Blog com painel de gestão (CMS)</label></div>
-          <div class="check-item"><input type="checkbox" id="f5" name="funcs[]" value="area_cliente"><label for="f5"><span class="check-box"></span>🔒 Área restrita / cliente</label></div>
-          <div class="check-item"><input type="checkbox" id="f6" name="funcs[]" value="agendamento"><label for="f6"><span class="check-box"></span>📅 Agendamento online</label></div>
-          <div class="check-item"><input type="checkbox" id="f7" name="funcs[]" value="loja_ecommerce"><label for="f7"><span class="check-box"></span>🛒 Loja virtual / e-commerce</label></div>
-          <div class="check-item"><input type="checkbox" id="f8" name="funcs[]" value="pagamento_online"><label for="f8"><span class="check-box"></span>💳 Pagamento online</label></div>
-          <div class="check-item"><input type="checkbox" id="f9" name="funcs[]" value="chat_bot"><label for="f9"><span class="check-box"></span>🤖 Chatbot / atendimento automatizado</label></div>
-          <div class="check-item"><input type="checkbox" id="f10" name="funcs[]" value="crm"><label for="f10"><span class="check-box"></span>📊 Integração com CRM</label></div>
-          <div class="check-item"><input type="checkbox" id="f11" name="funcs[]" value="email_mkt"><label for="f11"><span class="check-box"></span>✉️ E-mail marketing / automação</label></div>
-          <div class="check-item"><input type="checkbox" id="f12" name="funcs[]" value="google_analytics"><label for="f12"><span class="check-box"></span>📈 Google Analytics / Tag Manager</label></div>
-          <div class="check-item"><input type="checkbox" id="f13" name="funcs[]" value="pixel_meta"><label for="f13"><span class="check-box"></span>🎯 Pixel Meta / Google Ads</label></div>
-          <div class="check-item"><input type="checkbox" id="f14" name="funcs[]" value="mapa"><label for="f14"><span class="check-box"></span>📍 Mapa integrado (Google Maps)</label></div>
-          <div class="check-item"><input type="checkbox" id="f15" name="funcs[]" value="multilinguagem"><label for="f15"><span class="check-box"></span>🌍 Multilinguagem (PT/EN/ES)</label></div>
-          <div class="check-item"><input type="checkbox" id="f16" name="funcs[]" value="popup"><label for="f16"><span class="check-box"></span>💡 Pop-up / banners especiais</label></div>
-        </div>
-      </div>
-      <div class="field-group">
-        <label class="field-label" for="c_integracoes_outras">Outras integrações ou sistemas específicos <span class="opt">OPCIONAL</span></label>
-        <textarea id="c_integracoes_outras" name="integracoes_outras" placeholder="Ex: RD Station, HubSpot, Pipedrive, Hotmart, Calendly, Notion, ERP próprio, sistema de clínica, plataforma de ensino, etc."></textarea>
-      </div>
-    </div>
+🛒 Loja / E-commerce
 
-    <!-- S9 -->
-    <div class="form-section">
-      <div class="section-header">
-        <div class="section-num">Seção 09</div>
-        <h2 class="section-title">Prazo e Investimento</h2>
-        <p class="section-desc">Informações que nos permitem dimensionar a equipe, o cronograma e a proposta comercial adequada.</p>
-      </div>
-      <div class="field-group">
-        <label class="field-label">Prazo desejado para entrega <span class="req">OBRIGATÓRIO</span></label>
-        <div class="radio-group">
-          <div class="radio-item"><input type="radio" name="prazo" id="pr1" value="urgente"><label for="pr1"><span class="radio-dot"></span><span class="radio-label-txt"><strong>Urgente — até 2 semanas</strong><span>Projetos simples com conteúdo pronto</span></span></label></div>
-          <div class="radio-item"><input type="radio" name="prazo" id="pr2" value="curto"><label for="pr2"><span class="radio-dot"></span><span class="radio-label-txt"><strong>Curto prazo — 2 a 4 semanas</strong><span>Projetos médios com clareza de escopo</span></span></label></div>
-          <div class="radio-item"><input type="radio" name="prazo" id="pr3" value="normal"><label for="pr3"><span class="radio-dot"></span><span class="radio-label-txt"><strong>Prazo normal — 4 a 8 semanas</strong><span>Projetos completos com processo estruturado</span></span></label></div>
-          <div class="radio-item"><input type="radio" name="prazo" id="pr4" value="flexivel"><label for="pr4"><span class="radio-dot"></span><span class="radio-label-txt"><strong>Flexível — mais de 2 meses</strong><span>Projetos complexos sem pressa definida</span></span></label></div>
-        </div>
-      </div>
-      <div class="field-group">
-        <label class="field-label">Faixa de investimento previsto <span class="req">OBRIGATÓRIO</span></label>
-        <p class="field-hint" style="margin-bottom:12px">Esta informação é sigilosa e serve apenas para dimensionarmos a proposta mais adequada ao seu momento.</p>
-        <div class="radio-group">
-          <div class="radio-item"><input type="radio" name="orcamento" id="or1" value="ate3k"><label for="or1"><span class="radio-dot"></span>Até R$ 3.000 — projeto básico, essencial</label></div>
-          <div class="radio-item"><input type="radio" name="orcamento" id="or2" value="3k_8k"><label for="or2"><span class="radio-dot"></span>R$ 3.000 a R$ 8.000 — site profissional completo</label></div>
-          <div class="radio-item"><input type="radio" name="orcamento" id="or3" value="8k_20k"><label for="or3"><span class="radio-dot"></span>R$ 8.000 a R$ 20.000 — projeto robusto com integrações</label></div>
-          <div class="radio-item"><input type="radio" name="orcamento" id="or4" value="acima20k"><label for="or4"><span class="radio-dot"></span>Acima de R$ 20.000 — plataforma digital / sistema complexo</label></div>
-          <div class="radio-item"><input type="radio" name="orcamento" id="or5" value="aberto"><label for="or5"><span class="radio-dot"></span>Aberto — quero a proposta e decido depois</label></div>
-        </div>
-      </div>
-      <div class="field-group">
-        <label class="field-label">Nível de urgência do projeto <span class="req">OBRIGATÓRIO</span></label>
-        <div class="range-wrap">
-          <div class="range-labels"><span>Sem pressa</span><span>Prioridade máxima</span></div>
-          <input type="range" min="1" max="10" value="5" id="urgencia_range" name="urgencia" oninput="document.getElementById('urgencia_val').textContent=this.value+'/10'" aria-label="Nível de urgência">
-          <div class="range-val" id="urgencia_val">5/10</div>
-        </div>
-      </div>
-    </div>
+🔒 Área do cliente
 
-    <!-- S10 -->
-    <div class="form-section">
-      <div class="section-header">
-        <div class="section-num">Seção 10</div>
-        <h2 class="section-title">Informações Finais</h2>
-        <p class="section-desc">Espaço livre para completar o que não foi perguntado acima.</p>
-      </div>
-      <div class="field-group">
-        <label class="field-label" for="c_como_conheceu">Como conheceu a Agência Command? <span class="opt">OPCIONAL</span></label>
-        <select id="c_como_conheceu" name="como_conheceu">
-          <option value="">Selecione</option>
-          <option>Instagram</option>
-          <option>Google / pesquisa</option>
-          <option>Indicação de cliente</option>
-          <option>LinkedIn</option>
-          <option>Portfólio / site da agência</option>
-          <option>Evento ou palestra</option>
-          <option>Outro</option>
-        </select>
-      </div>
-      <div class="field-group">
-        <label class="field-label" for="c_obs">Observações adicionais <span class="opt">OPCIONAL</span></label>
-        <textarea id="c_obs" name="obs" placeholder="Há algo importante que não foi perguntado? Algum contexto, restrição, insight ou expectativa que devemos saber antes da nossa conversa? Este é o espaço."></textarea>
-        <p class="field-hint">Quanto mais você compartilhar aqui, mais personalizado e preciso será nosso diagnóstico.</p>
-      </div>
-      <div class="field-group">
-        <div class="check-item" style="max-width:100%">
-          <input type="checkbox" id="c_lgpd" name="lgpd" required>
-          <label for="c_lgpd" style="padding:16px;border-radius:10px"><span class="check-box"></span><span style="font-size:14px;color:rgba(255,255,255,.7);line-height:1.5">Concordo que os dados fornecidos sejam utilizados para elaboração de diagnóstico e proposta comercial, conforme a LGPD. Não compartilhamos informações com terceiros.</span></label>
-        </div>
-      </div>
-      <div class="submit-area">
-        <button type="submit" class="btn-submit">Enviar briefing completo ✦</button>
-        <p class="submit-note">Retornaremos em até 24h úteis com diagnóstico e próximos passos.</p>
-      </div>
-    </div>
+📄 Política de privacidade
 
-  </form>
-  </div><!-- /v-completo -->
+🎯 Landing page específica
+Outras páginas não listadas acima
+OPCIONAL
+SEÇÃO 06
+Referências e Estilo Visual
+Entendemos o valor percebido antes da entrega. Estética é estratégia.
+Sites de referência que você gosta
+OBRIGATÓRIO
+Estilo visual desejado
+OBRIGATÓRIO
+Marque todos os estilos que ressoam com sua marca.
 
-  <!-- ════ VERSÃO RÁPIDA ════ -->
-  <div id="v-curto" class="form-version" role="tabpanel">
-  <form id="form-curto" action="https://formspree.io/f/mlgoevob" method="POST" novalidate>
-    <div class="form-section">
-      <div class="section-header">
-        <div class="section-num">Versão Rápida</div>
-        <h2 class="section-title">Essencial em 5 minutos</h2>
-        <p class="section-desc">As perguntas mais importantes para um diagnóstico inicial. Você pode complementar por WhatsApp.</p>
-      </div>
-      <div class="field-row">
-        <div class="field-group"><label class="field-label" for="r_nome">Nome e empresa <span class="req">OBRIGATÓRIO</span></label><input type="text" id="r_nome" placeholder="João Silva — Empresa XYZ" required></div>
-        <div class="field-group"><label class="field-label" for="r_contato">WhatsApp ou e-mail <span class="req">OBRIGATÓRIO</span></label><input type="text" id="r_contato" placeholder="(00) 00000-0000 ou email@…" required></div>
-      </div>
-      <div class="field-group"><label class="field-label" for="r_segmento">Segmento e o que você oferece <span class="req">OBRIGATÓRIO</span></label><input type="text" id="r_segmento" placeholder="Ex: Advogado especialista em trabalhista / Clínica de estética / Consultora de RH" required></div>
-      <div class="field-group"><label class="field-label" for="r_objetivo">Qual é o objetivo principal do site? <span class="req">OBRIGATÓRIO</span></label><textarea id="r_objetivo" placeholder="O que você quer que o visitante faça ao entrar no seu site? Ex: Entrar em contato, comprar, agendar…" required></textarea></div>
-      <div class="field-group"><label class="field-label" for="r_publico">Quem é seu público-alvo? <span class="req">OBRIGATÓRIO</span></label><input type="text" id="r_publico" placeholder="Ex: Empresas médias que precisam de consultoria / Mulheres 30–45 anos que buscam saúde preventiva" required></div>
-      <div class="field-group"><label class="field-label" for="r_referencia">Um site de referência que você gosta <span class="req">OBRIGATÓRIO</span></label><input type="url" id="r_referencia" placeholder="https://…" required></div>
-      <div class="field-group"><label class="field-label" for="r_orcamento">Faixa de investimento estimado <span class="req">OBRIGATÓRIO</span></label>
-        <select id="r_orcamento" required><option value="">Selecione</option><option>Até R$ 3.000</option><option>R$ 3.000 a R$ 8.000</option><option>R$ 8.000 a R$ 20.000</option><option>Acima de R$ 20.000</option><option>Aberto — quero a proposta</option></select>
-      </div>
-      <div class="field-group"><label class="field-label" for="r_prazo">Prazo desejado <span class="req">OBRIGATÓRIO</span></label>
-        <select id="r_prazo" required><option value="">Selecione</option><option>Urgente — até 2 semanas</option><option>2 a 4 semanas</option><option>1 a 2 meses</option><option>Sem pressa definida</option></select>
-      </div>
-      <div class="field-group"><label class="field-label" for="r_obs">Algum detalhe importante? <span class="opt">OPCIONAL</span></label><textarea id="r_obs" placeholder="Qualquer contexto que ajude no diagnóstico inicial…"></textarea></div>
-      <div class="submit-area"><button type="submit" class="btn-submit">Enviar versão rápida ⚡</button><p class="submit-note">Entraremos em contato por WhatsApp para complementar o briefing.</p></div>
-    </div>
-  </form>
-  </div><!-- /v-curto -->
+🤍 Minimalista / Clean
 
-  <!-- ════ VERSÃO PREMIUM ════ -->
-  <div id="v-premium" class="form-version" role="tabpanel">
-  <div class="form-section" style="border-color:rgba(200,169,110,0.3)">
-    <div class="section-header">
-      <div class="section-num" style="color:var(--gold)">Versão Premium</div>
-      <h2 class="section-title">Diagnóstico Aprofundado</h2>
-      <p class="section-desc">Para projetos de alto investimento, marcas que exigem excelência e clientes que querem resultados excepcionais. Inclui tudo do formulário completo + camadas estratégicas adicionais.</p>
-    </div>
-    <div style="background:var(--gold-dim);border:1px solid rgba(200,169,110,0.2);border-radius:12px;padding:24px;margin-bottom:32px">
-      <p style="font-size:15px;color:rgba(255,255,255,.85);line-height:1.7">💎 <strong>Esta versão inclui:</strong> todas as perguntas do formulário completo + perguntas sobre posicionamento de marca, arquitetura da informação, metas de conversão específicas, integrações de sistema legado, estratégia de conteúdo e SEO, identidade de marca, análise de concorrência digital e planejamento de lançamento.</p>
-    </div>
-    <p style="font-size:15px;color:var(--gray);line-height:1.7;margin-bottom:28px">Projetos Premium começam com uma <strong style="color:var(--white)">sessão de discovery estratégico</strong> (1h30 ao vivo) antes do preenchimento do briefing detalhado. Isso garante alinhamento total antes de qualquer linha de código.</p>
-    <div class="field-group"><label class="field-label" for="pm_empresa">Empresa e responsável <span class="req">OBRIGATÓRIO</span></label><input type="text" id="pm_empresa" placeholder="Nome da empresa e nome do responsável pelo projeto"></div>
-    <div class="field-group"><label class="field-label" for="pm_contato">E-mail e WhatsApp <span class="req">OBRIGATÓRIO</span></label><input type="text" id="pm_contato" placeholder="email@empresa.com / (00) 00000-0000"></div>
-    <div class="field-group"><label class="field-label" for="pm_site">Site atual e redes sociais <span class="opt">OPCIONAL</span></label><input type="text" id="pm_site" placeholder="https://… / @instagram / /linkedin"></div>
-    <div class="field-group"><label class="field-label" for="pm_neg">Descreva seu negócio com profundidade <span class="req">OBRIGATÓRIO</span></label><textarea id="pm_neg" style="min-height:160px" placeholder="Modelo de negócio, diferenciais reais, posicionamento de mercado, proposta de valor única, onde você está hoje e onde quer estar em 12 meses…" required></textarea></div>
-    <div class="field-group"><label class="field-label" for="pm_kpi">Quais são as métricas de sucesso do projeto? <span class="req">OBRIGATÓRIO</span></label><textarea id="pm_kpi" placeholder="Ex: Aumentar leads qualificados de 20 para 80/mês. Reduzir CAC em 40%. Subir posição no Google para 3 palavras-chave estratégicas. Taxa de conversão acima de 3%." required></textarea></div>
-    <div class="field-group"><label class="field-label" for="pm_orcamento">Faixa de investimento <span class="req">OBRIGATÓRIO</span></label><select id="pm_orcamento" required><option value="">Selecione</option><option>R$ 8.000 a R$ 15.000</option><option>R$ 15.000 a R$ 30.000</option><option>R$ 30.000 a R$ 60.000</option><option>Acima de R$ 60.000</option><option>Aberto — aguardando proposta</option></select></div>
-    <div class="field-group"><label class="field-label" for="pm_obs">Informações estratégicas adicionais <span class="opt">OPCIONAL</span></label><textarea id="pm_obs" style="min-height:160px" placeholder="Concorrentes que admira, posicionamento atual vs. desejado, expectativas específicas de qualidade, benchmarks internacionais, stakeholders envolvidos na aprovação do projeto…"></textarea></div>
-    <div class="submit-area"><button type="submit" class="btn-submit" style="background:linear-gradient(135deg,var(--gold),#A0730A)">Solicitar sessão Premium 💎</button><p class="submit-note">Entraremos em contato em até 4h para agendar a sessão de discovery estratégico.</p></div>
-  </div>
-  </div><!-- /v-premium -->
+⚡ Moderno / Tecnológico
 
-  <!-- QUALIFICAÇÃO -->
-  <div style="margin-top:56px">
-    <h2 style="font-family:var(--font-d);font-size:20px;font-weight:800;margin-bottom:6px;letter-spacing:-.01em">📊 Guia de Qualificação</h2>
-    <p style="font-size:14px;color:var(--gray);margin-bottom:24px">Quais respostas qualificam melhor o lead e ajudam a definir o escopo e investimento.</p>
+✨ Premium / Luxo
 
-    <div class="qualif-block">
-      <h3><span style="font-size:18px">🟡</span> Campos obrigatórios prioritários</h3>
-      <div class="qualif-item"><span class="qualif-dot gold"></span><div><strong>Objetivo principal do site</strong><p>Define toda a estratégia de conversão, arquitetura e conteúdo. Sem isso, não há direção.</p></div></div>
-      <div class="qualif-item"><span class="qualif-dot gold"></span><div><strong>Ação principal do visitante</strong><p>A métrica-raiz do projeto. Define CTAs, hierarquia visual e jornada do usuário.</p></div></div>
-      <div class="qualif-item"><span class="qualif-dot gold"></span><div><strong>Faixa de investimento</strong><p>Evita proposta fora da realidade e permite dimensionar equipe e escopo adequados.</p></div></div>
-      <div class="qualif-item"><span class="qualif-dot gold"></span><div><strong>Maior desafio do negócio</strong><p>Revela se o site resolve o problema real — ou se o cliente precisa de outra solução primeiro.</p></div></div>
-    </div>
+🤝 Humano / Acolhedor
 
-    <div class="qualif-block">
-      <h3><span style="font-size:18px">🔵</span> Respostas que elevam a qualidade do lead</h3>
-      <div class="qualif-item"><span class="qualif-dot blue"></span><div><strong>Ticket médio por cliente</strong><p>Indica o potencial ROI do projeto e justifica o investimento no site.</p></div></div>
-      <div class="qualif-item"><span class="qualif-dot blue"></span><div><strong>Já possui identidade visual completa</strong><p>Reduz escopo e indica cliente mais maduro e organizado.</p></div></div>
-      <div class="qualif-item"><span class="qualif-dot blue"></span><div><strong>Materiais disponíveis (textos, fotos, logo)</strong><p>Impacta diretamente no prazo e no preço final do projeto.</p></div></div>
-      <div class="qualif-item"><span class="qualif-dot blue"></span><div><strong>Métricas de sucesso definidas (versão premium)</strong><p>Indica cliente estratégico que entende o valor de um site bem feito.</p></div></div>
-    </div>
+👔 Institucional / Sério
 
-    <div class="qualif-block">
-      <h3><span style="font-size:18px">🟢</span> Sinais de alto valor e projeto premium</h3>
-      <div class="qualif-item"><span class="qualif-dot green"></span><div><strong>Orçamento acima de R$ 8.000</strong><p>Indica projeto estruturado e cliente disposto a investir em resultado.</p></div></div>
-      <div class="qualif-item"><span class="qualif-dot green"></span><div><strong>Ticket médio do cliente acima de R$ 2.000</strong><p>ROI claro — 1 cliente novo já paga o site.</p></div></div>
-      <div class="qualif-item"><span class="qualif-dot green"></span><div><strong>Precisa de integrações (CRM, automação, e-commerce)</strong><p>Projeto de maior complexidade e recorrência de manutenção.</p></div></div>
-      <div class="qualif-item"><span class="qualif-dot green"></span><div><strong>Momento de escala ou reposicionamento</strong><p>Cliente com urgência estratégica e mais disposto a mover-se rápido.</p></div></div>
-    </div>
-  </div>
+🎨 Criativo / Expressivo
 
-  <!-- SUCCESS -->
-  <div class="success-screen" id="successScreen" role="alert" aria-live="assertive">
-    <div class="success-icon" aria-hidden="true">✓</div>
-    <h2>Briefing recebido.</h2>
-    <p>Obrigado por compartilhar essas informações. Nossa equipe vai analisar tudo com atenção e entrar em contato em breve com um diagnóstico personalizado.</p>
-    <button class="btn-submit" onclick="resetForm()" aria-label="Enviar novo briefing">Enviar novo briefing</button>
-  </div>
+🌑 Dark mode / Escuro
 
-</div><!-- /form-wrap -->
+☀️ Claro / Light mode
 
-<script>
-(function(){
-  // VERSION TABS
-  window.setVersion = function(v) {
-    document.querySelectorAll('.form-version').forEach(function(el){el.classList.remove('active')});
-    document.querySelectorAll('.vtab').forEach(function(el){el.classList.remove('active');el.setAttribute('aria-selected','false')});
-    document.getElementById('v-'+v).classList.add('active');
-    event.target.classList.add('active');
-    event.target.setAttribute('aria-selected','true');
-    updateProgress();
-  };
+🌈 Colorido / Vibrante
 
-  // PROGRESS
-  function updateProgress() {
-    var fields = document.querySelectorAll('.form-version.active input[required], .form-version.active select[required], .form-version.active textarea[required]');
-    var filled = 0;
-    fields.forEach(function(f){
-      if(f.type==='radio'||f.type==='checkbox'){
-        var name = f.name;
-        var checked = document.querySelector('.form-version.active input[name="'+name+'"]:checked');
-        if(checked) filled++;
-      } else {
-        if(f.value.trim()) filled++;
-      }
-    });
-    var pct = fields.length > 0 ? Math.round((filled/fields.length)*100) : 0;
-    document.getElementById('progressBar').style.width = pct + '%';
-    document.getElementById('stepInfo').textContent = pct > 0 ? '· '+pct+'% preenchido' : '';
-  }
+📰 Editorial / Magazine
+Estilos ou referências que você NÃO quer
+OPCIONAL
+Cores desejadas ou referências de paleta
+OPCIONAL
+Já existe identidade visual / brand?
+OBRIGATÓRIO
 
-  document.addEventListener('input', updateProgress);
-  document.addEventListener('change', updateProgress);
+Sim, brand manual completo
 
-  // VALIDAÇÃO E ENVIO VIA FORMSPREE
-  ['form-completo','form-curto'].forEach(function(id){
-    var form = document.getElementById(id);
-    if(!form) return;
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
+Sim, mas é parcial / informal
 
-      // Valida campos obrigatórios
-      var reqs = form.querySelectorAll('[required]');
-      var valid = true;
-      var firstInvalid = null;
-      reqs.forEach(function(f){
-        if(f.type==='radio'){
-          var checked = form.querySelector('input[name="'+f.name+'"]:checked');
-          if(!checked && !firstInvalid) firstInvalid = f;
-          if(!checked) valid = false;
-        } else if(f.type==='checkbox'){
-          if(!f.checked){ valid = false; if(!firstInvalid) firstInvalid = f; }
-        } else {
-          if(!f.value.trim()){
-            f.style.borderColor='var(--red)';
-            valid = false;
-            if(!firstInvalid) firstInvalid = f;
-          } else { f.style.borderColor=''; }
-        }
-      });
+Só tenho a logo
 
-      if(!valid){
-        if(firstInvalid) firstInvalid.scrollIntoView({behavior:'smooth',block:'center'});
-        alert('Por favor, preencha todos os campos obrigatórios antes de enviar.');
-        return;
-      }
+Não, vou precisar criar
+Já existe logotipo?
+OBRIGATÓRIO
 
-      // Verifica se Formspree foi configurado
-      var action = form.getAttribute('action') || '';
-      if(action.indexOf('mlgoevob') !== -1){
-        alert('⚙️ Configure o Formspree primeiro!\n\n1. Acesse formspree.io\n2. Crie uma conta grátis\n3. Crie um novo formulário\n4. Substitua mlgoevob pelo seu código no HTML');
-        return;
-      }
+Sim, em formato vetorial (AI, EPS, SVG)
 
-      // Envio real via fetch para Formspree
-      var btn = form.querySelector('button[type=submit]');
-      var btnOriginal = btn.innerHTML;
-      btn.innerHTML = '⏳ Enviando…';
-      btn.disabled = true;
+Sim, só em PNG/JPG
 
-      var data = new FormData(form);
-      fetch(action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      })
-      .then(function(res){
-        if(res.ok){
-          showSuccess();
-        } else {
-          res.json().then(function(data){
-            btn.innerHTML = btnOriginal;
-            btn.disabled = false;
-            alert('Erro ao enviar. Tente novamente ou entre em contato por WhatsApp.');
-          });
-        }
-      })
-      .catch(function(){
-        btn.innerHTML = btnOriginal;
-        btn.disabled = false;
-        alert('Erro de conexão. Verifique sua internet e tente novamente.');
-      });
-    });
-  });
+Não, precisarei criar
+SEÇÃO 07
+Conteúdo e Materiais
+Saber o que você já tem nos ajuda a planejar o escopo com precisão.
+Quais materiais você já possui?
+OBRIGATÓRIO
 
-  // PREMIUM submit (sem Formspree — vai para contato direto)
-  var pmBtns = document.querySelectorAll('#v-premium button[type=submit]');
-  pmBtns.forEach(function(btn){
-    btn.addEventListener('click', function(e){ e.preventDefault(); showSuccess(); });
-  });
+📝 Textos das páginas prontos
 
-  function showSuccess(){
-    var wrap = document.querySelector('.form-wrap');
-    wrap.style.display = 'none';
-    document.getElementById('progressBar').style.width = '100%';
-    var success = document.createElement('div');
-    success.style.cssText = 'max-width:600px;margin:120px auto 80px;padding:0 24px;text-align:center';
-    success.innerHTML =
-      '<div style="width:72px;height:72px;background:rgba(52,211,153,0.15);border:1px solid rgba(52,211,153,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 28px">✓</div>'+
-      '<h2 style="font-family:\'Syne\',sans-serif;font-size:32px;font-weight:800;margin-bottom:14px;color:#fff">Briefing recebido.</h2>'+
-      '<p style="font-size:17px;color:#8A8A8E;max-width:460px;margin:0 auto 32px;line-height:1.7">Obrigado por dedicar seu tempo a este processo. Nossa equipe vai analisar tudo com atenção e entrar em contato em até 24h úteis com um diagnóstico personalizado.</p>'+
-      '<button onclick="window.location.reload()" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#3A7BFF,#5B4FFF);color:#fff;border:none;border-radius:100px;padding:15px 36px;font-family:\'DM Sans\',sans-serif;font-size:15px;font-weight:500;cursor:pointer">Enviar novo briefing</button>';
-    document.body.appendChild(success);
-    window.scrollTo({top:0,behavior:'smooth'});
-  }
+📷 Fotos próprias / profissionais
 
-  window.resetForm = function(){ window.location.reload(); };
+🎬 Vídeos institucionais
 
-  // FILTRO OBRIG highlight
-  document.querySelectorAll('input[required], select[required], textarea[required]').forEach(function(f){
-    f.addEventListener('blur', function(){
-      if(f.type==='text'||f.type==='email'||f.type==='tel'||f.type==='url'||f.tagName==='TEXTAREA'||f.tagName==='SELECT'){
-        f.style.borderColor = f.value.trim() ? '' : 'rgba(248,113,113,0.5)';
-      }
-    });
-    f.addEventListener('input', function(){ f.style.borderColor = ''; });
-  });
-})();
-</script>
-</body>
-</html>
+⭐ Depoimentos de clientes
+
+🎨 Logo em vetor
+
+📐 Manual de identidade visual
+
+🌐 Domínio registrado
+
+🖥️ Hospedagem contratada
+Qual é o domínio desejado ou atual?
+OPCIONAL
+Observações sobre conteúdo
+OPCIONAL
+SEÇÃO 08
+Funcionalidades e Integrações
+Cada funcionalidade tem impacto no escopo, prazo e investimento. Marque tudo que precisa.
+Quais funcionalidades você precisa?
+OBRIGATÓRIO
+
+📩 Formulário de contato
+
+💬 Botão / Chat WhatsApp
+
+🎯 Captação de leads / opt-in
+
+📝 Blog com painel de gestão (CMS)
+
+🔒 Área restrita / cliente
+
+📅 Agendamento online
+
+🛒 Loja virtual / e-commerce
+
+💳 Pagamento online
+
+🤖 Chatbot / atendimento automatizado
+
+📊 Integração com CRM
+
+✉️ E-mail marketing / automação
+
+📈 Google Analytics / Tag Manager
+
+🎯 Pixel Meta / Google Ads
+
+📍 Mapa integrado (Google Maps)
+
+🌍 Multilinguagem (PT/EN/ES)
+
+💡 Pop-up / banners especiais
+Outras integrações ou sistemas específicos
+OPCIONAL
+SEÇÃO 09
+Prazo e Investimento
+Informações que nos permitem dimensionar a equipe, o cronograma e a proposta comercial adequada.
+Prazo desejado para entrega
+OBRIGATÓRIO
+
+Urgente — até 2 semanas
+Projetos simples com conteúdo pronto
+
+Curto prazo — 2 a 4 semanas
+Projetos médios com clareza de escopo
+
+Prazo normal — 4 a 8 semanas
+Projetos completos com processo estruturado
+
+Flexível — mais de 2 meses
+Projetos complexos sem pressa definida
+Faixa de investimento previsto
+OBRIGATÓRIO
+Esta informação é sigilosa e serve apenas para dimensionarmos a proposta mais adequada ao seu momento.
+
+Até R$ 3.000 — projeto básico, essencial
+
+R$ 3.000 a R$ 8.000 — site profissional completo
+
+R$ 8.000 a R$ 20.000 — projeto robusto com integrações
+
+Acima de R$ 20.000 — plataforma digital / sistema complexo
+
+Aberto — quero a proposta e decido depois
+Nível de urgência do projeto
+OBRIGATÓRIO
+Sem pressa
+Prioridade máxima
+
+5/10
+SEÇÃO 10
+Informações Finais
+Espaço livre para completar o que não foi perguntado acima.
+Como conheceu a Agência Command?
+OPCIONAL
+          Selecione
+          Instagram
+          Google / pesquisa
+          Indicação de cliente
+          LinkedIn
+          Portfólio / site da agência
+          Evento ou palestra
+          Outro
+        
+Observações adicionais
+OPCIONAL
+Quanto mais você compartilhar aqui, mais personalizado e preciso será nosso diagnóstico.
+
+Concordo que os dados fornecidos sejam utilizados para elaboração de diagnóstico e proposta comercial, conforme a LGPD. Não compartilhamos informações com terceiros.
+Enviar briefing completo ✦
+Retornaremos em até 24h úteis com diagnóstico e próximos passos.
+📊 Guia de Qualificação
+Quais respostas qualificam melhor o lead e ajudam a definir o escopo e investimento.
+🟡
+Campos obrigatórios prioritários
+
+Objetivo principal do site
+Define toda a estratégia de conversão, arquitetura e conteúdo. Sem isso, não há direção.
+
+Ação principal do visitante
+A métrica-raiz do projeto. Define CTAs, hierarquia visual e jornada do usuário.
+
+Faixa de investimento
+Evita proposta fora da realidade e permite dimensionar equipe e escopo adequados.
+
+Maior desafio do negócio
+Revela se o site resolve o problema real — ou se o cliente precisa de outra solução primeiro.
+🔵
+Respostas que elevam a qualidade do lead
+
+Ticket médio por cliente
+Indica o potencial ROI do projeto e justifica o investimento no site.
+
+Já possui identidade visual completa
+Reduz escopo e indica cliente mais maduro e organizado.
+
+Materiais disponíveis (textos, fotos, logo)
+Impacta diretamente no prazo e no preço final do projeto.
+
+Métricas de sucesso definidas (versão premium)
+Indica cliente estratégico que entende o valor de um site bem feito.
+🟢
+Sinais de alto valor e projeto premium
+
+Orçamento acima de R$ 8.000
+Indica projeto estruturado e cliente disposto a investir em resultado.
+
+Ticket médio do cliente acima de R$ 2.000
+ROI claro — 1 cliente novo já paga o site.
+
+Precisa de integrações (CRM, automação, e-commerce)
+Projeto de maior complexidade e recorrência de manutenção.
+
+Momento de escala ou reposicionamento
+Cliente com urgência estratégica e mais disposto a mover-se rápido.
